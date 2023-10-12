@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  margin: auto;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+  height: 50vh;
+  min-height: 30px;
+  background-image: url('../assets/img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#nav-tab {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
+
+.footer h5 {
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 13px;
+  background: yellow;
+  padding: 14px;
+}
+
+.read-button {
+  background: url('../assets/img/reading.png');
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-left: 16px;
+  padding: 5px 0 10px 0;
+  cursor: pointer;
+  border: none;
+}
+
+.read-button:hover {
+  background: url('../assets/img/readinghover.png');
+  background-size: contain;
+}
+
+.edit-button {
+  background: url('../assets/img/edit.png');
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.edit-button:hover {
+  background: url('../assets/img/edithover.png');
+  background-size: contain;
+}
+
+.trash-button {
+  background: url('../assets/img/trash.png');
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.trash-button:hover {
+  background: url('../assets/img/trashhover.png');
+  background-size: contain;
+}
+
+.unread-button {
+  background: url('../assets/img/unread.png');
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.unread-button:hover {
+  background: url('../assets/img/unreadhover.png');
+  background-size: contain;
+}
+
+.read-button:focus,
+.trash-button,
+.edit-button {
+  outline: none;
+}

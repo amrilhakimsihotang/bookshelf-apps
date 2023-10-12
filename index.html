@@ -2,95 +2,247 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bookshelf Apps</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="#" />
+
+    <title>Bookshelf App - AHS</title>
   </head>
   <body>
-    <header class="head_bar">
-      <h1 class="head_bar__title">Bookshelf Apps</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Bookshelf Application</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="banner">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-light">Belajar Membuat Front-End Web untuk Pemula</h1>
+            <p class="lead">
+              Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web
+              Storage
+            </p>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-      <section class="input_section">
-        <h2>Masukkan Buku Baru</h2>
-        <form id="inputBook">
-          <div class="input">
-            <label for="inputBookTitle">Judul</label>
-            <input
-              id="inputBookTitle"
-              type="text"
-              maxlength="100"
-              placeholder="Isikan judul buku"
-              required
-            />
-          </div>
-          <div class="input">
-            <label for="inputBookAuthor">Penulis</label>
-            <input
-              id="inputBookAuthor"
-              type="text"
-              maxlength="100"
-              placeholder="Isikan nama penulis"
-              required
-            />
-          </div>
-          <div class="input">
-            <label for="inputBookYear">Tahun</label>
-            <input
-              id="inputBookYear"
-              type="number"
-              maxlength="4"
-              placeholder="Isikan tahun terbitan buku"
-              required
-            />
-          </div>
-          <div class="input_inline">
-            <label for="inputBookIsComplete">Selesai dibaca</label>
-            <input id="inputBookIsComplete" type="checkbox" />
-          </div>
-          <button id="bookSubmit" type="submit">
-            Masukkan Buku ke rak <span>Belum selesai dibaca</span>
-          </button>
-        </form>
-      </section>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active"
+          id="nav-pencatatan-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-pencatatan"
+          type="button"
+          role="tab"
+          aria-controls="nav-pencatatan"
+          aria-selected="true"
+        >
+          Pencatatan buku
+        </button>
+        <button
+          class="nav-link"
+          id="nav-belum-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-belum"
+          type="button"
+          role="tab"
+          aria-controls="nav-belum"
+          aria-selected="false"
+        >
+          Belum dibaca
+        </button>
+        <button
+          class="nav-link"
+          id="nav-selesai-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-selesai"
+          type="button"
+          role="tab"
+          aria-controls="nav-selesai"
+          aria-selected="false"
+        >
+          Tuntas baca
+        </button>
+        <button
+          class="nav-link"
+          id="nav-telusuri-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-telusuri"
+          type="button"
+          role="tab"
+          aria-controls="nav-telusuri"
+          aria-selected="false"
+        >
+          Menelusuri buku
+        </button>
+      </div>
 
-      <section class="search_section">
-        <h2>Cari Buku (Opsional)</h2>
-        <form id="searchBook">
-          <label for="searchBookTitle">Judul</label>
-          <input
-            id="searchBookTitle"
-            type="text"
-            maxlength="100"
-            placeholder="Cari data"
-          />
-          <button id="searchSubmit" type="submit">Cari</button>
-        </form>
-      </section>
-
-      <section class="book_shelf">
-        <h2>Belum selesai dibaca</h2>
-
-        <div class="list-item" id="listItemDataBelumdibaca"></div>
-      </section>
-
-      <section class="book_shelf">
-        <h2>Selesai dibaca</h2>
-
-        <div class="list-item" id="listItemDatasudahdibaca"></div>
-      </section>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-pencatatan"
+          role="tabpanel"
+          aria-labelledby="nav-pencatatan-tab"
+          tabindex="0"
+        >
+          <section class="py-5">
+            <div class="container">
+              <form id="inputBook">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputBookTitle"
+                    placeholder="Isikan judul Buku"
+                    required
+                    maxlength="200"
+                  />
+                  <label for="inputBookTitle">Judul Buku</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputBookAuthor"
+                    placeholder="Isikan nama penulis"
+                    required
+                    maxlength="100"
+                  />
+                  <label for="inputBookAuthor">Penulis</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="inputBookYear"
+                    placeholder="Isikan tahun terbitan buku"
+                    required
+                    maxlength="4"
+                  />
+                  <label for="inputBookYear">Tahun Cetak</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="inputBookIsComplete"
+                    />
+                    <label class="form-check-label" for="inputBookIsComplete"
+                      >Selesai dibaca</label
+                    >
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <button id="bookSubmit" type="submit" class="btn btn-success">
+                    Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-belum"
+          role="tabpanel"
+          aria-labelledby="nav-belum-tab"
+          tabindex="0"
+        >
+          <section class="py-5">
+            <div class="container">
+              <h5 class="fw-light">Daftar buku belum selesai dibaca</h5>
+              <div
+                class="form-floating mb-3"
+                id="listItemDataBelumdibaca"
+              ></div>
+            </div>
+          </section>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-selesai"
+          role="tabpanel"
+          aria-labelledby="nav-selesai-tab"
+          tabindex="0"
+        >
+          <section class="py-5">
+            <div class="container">
+              <h5 class="fw-light">Daftar buku selesai dibaca</h5>
+              <div
+                class="form-floating mb-3"
+                id="listItemDatasudahdibaca"
+              ></div>
+            </div>
+          </section>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-telusuri"
+          role="tabpanel"
+          aria-labelledby="nav-telusuri-tab"
+          tabindex="0"
+        >
+          <section class="py-5">
+            <div class="container">
+              <h5 class="fw-light">Masukkan Judul buku yang akan dicari</h5>
+              <form id="searchBook" class="d-flex" role="search">
+                <input
+                  id="searchBookTitle"
+                  class="form-control me-2"
+                  type="text"
+                  placeholder="Cari.."
+                  aria-label="Cari.."
+                />
+                <button
+                  id="searchSubmit"
+                  class="btn btn-outline-success"
+                  type="submit"
+                >
+                  Cari..
+                </button>
+              </form>
+              <div class="form-floating mb-3" id="listPenelusuranBuku"></div>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
-
+    <footer class="footer">
+      <h5>Bookshelf application&copy; Amril Hakim Sihotang - 2023</h5>
+    </footer>
     <script src="bookshelf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
